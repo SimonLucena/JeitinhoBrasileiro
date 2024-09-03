@@ -12,7 +12,7 @@ class ProdutoService {
             novoProduto.dataValues.imagemUrl = `/public/images/produtos/${novoProduto.nome}.jpg`;
         } else {
 
-            novoProduto.dataValues.imagemUrl = `/public/images/produtos/default.jpg`;
+            novoProduto.dataValues.imagemUrl = `/public/images/produtos/coxinha.jpg`;
         }
         return novoProduto;
     }
@@ -24,8 +24,8 @@ class ProdutoService {
             const imagePath = path.join(__dirname, '../../public/images/produtos', `${produto.nome}.jpg`);
             if (fs.existsSync(imagePath)) {
                 produto.dataValues.imagemUrl = `/public/images/produtos/${produto.nome}.jpg`;
-            } else {
-                produto.dataValues.imagemUrl = `/public/images/produtos/default.jpg`;
+            }else {
+                produto.dataValues.imagemUrl = `/public/images/produtos/coxinha.jpg`;
             }
         });
         
