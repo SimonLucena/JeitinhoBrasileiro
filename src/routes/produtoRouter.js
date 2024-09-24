@@ -8,14 +8,14 @@ const router = express.Router();
 //Todos iniciam com ->    /produtos
 
 // nome descricao preco estoque categoria_id 
-router.post('/', authMiddleware, ProdutoController.create);     
+router.post('/', ProdutoController.create);     
 router.get('/', ProdutoController.getAll);     
 
-router.post('/:nome/imagem', authMiddleware, upload.single('imagem'), ProdutoController.uploadImagem);
+router.post('/:nome/imagem', upload.single('imagem'), ProdutoController.uploadImagem);
 
 // ID COMO PARAMETRO  
 router.get('/:id', ProdutoController.getById);  
-router.put('/:id', authMiddleware, ProdutoController.update);   
+router.put('/:id', ProdutoController.update);   
 router.delete('/:id', authMiddleware, ProdutoController.delete);
 
 module.exports = router;
